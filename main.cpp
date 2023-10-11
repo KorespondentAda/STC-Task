@@ -2,6 +2,8 @@
 #include <vector>
 #include "SMA.hpp"
 
+using SAMPLE_T = float;
+
 int main() {
 	/// Read number of data points #n and window size #k, in samples
 	int n, k;
