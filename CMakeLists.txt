@@ -11,3 +11,6 @@ target_link_libraries(sma-sample PUBLIC SMA)
 add_executable(sma-measure timeMeasure.cpp)
 target_link_libraries(sma-measure PUBLIC SMA)
 
+add_executable(sma-test test.cpp)
+target_link_libraries(sma-test PUBLIC SMA)
+
