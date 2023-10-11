@@ -1,8 +1,9 @@
 #include <vector>
 
-std::vector<SAMPLE_T> SimpleMovingAverage(int k, std::vector<SAMPLE_T> data) {
+template<class T>
+std::vector<T> SimpleMovingAverage(int k, std::vector<T> data) {
 	int smaSize = data.size() - (k - 1);
-	std::vector<SAMPLE_T> sma(smaSize);
+	std::vector<T> sma(smaSize);
 
 	/// First SMA value is just average of #data first #k elements
 	sma[0] = 0;
@@ -20,4 +21,7 @@ std::vector<SAMPLE_T> SimpleMovingAverage(int k, std::vector<SAMPLE_T> data) {
 
 	return sma;
 }
+
+template std::vector<float> SimpleMovingAverage<float>(int k, std::vector<float> data);
+template std::vector<double> SimpleMovingAverage<double>(int k, std::vector<double> data);
 

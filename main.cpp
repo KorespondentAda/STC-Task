@@ -2,11 +2,14 @@
 #include <vector>
 #include "SMA.hpp"
 
+using SAMPLE_T = float;
+
+/// SimpleMovingAverage() usage example
 int main() {
 	/// Read number of data points #n and window size #k, in samples
 	int n, k;
 	std::cin >> n >> k;
-	std::vector<SAMPLE_T> data(n);
+	std::vector<SAMPLE_T> data(n, 0);
 
 	/// Then read #n samples from stdin
 	for (int i = 0; i < n; i++) {
@@ -16,8 +19,8 @@ int main() {
 	std::vector<SAMPLE_T> sma = SimpleMovingAverage(k, data);
 
 	/// Write calculated SMAs to stdout
-	for (int i = 0; i < sma.size(); i++) {
-		std::cout << sma[i] << std::endl;
+	for (auto sample : sma) {
+		std::cout << sample << std::endl;
 	}
 
 	return 0;
